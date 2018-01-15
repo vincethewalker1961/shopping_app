@@ -3,9 +3,13 @@
         <span class="glyphicon glyphicon-plus"></span>
         Add Grocery Item</a>
         <ul class="list-group">
-            <li ng-repeat="item in groceryItems | orderBy: 'date'" class="list-group-item text-center clearfix">
+            <li ng-repeat="item in groceryItems | orderBy: '-date'" class="list-group-item text-center clearfix">
                 <span style="font-weight: bold">{{ item.itemName | uppercase }}</span>
-                <a href="#!/addItem/edit/{{item.id}}" class="btn-am btn-default pull-right">
+                <button tupe"button" class="btn btn-am btn-danger pull-right" ng-click="removeItem(item)">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+                
+                <a href="#!/addItem/edit/{{item.id}}" class="btn btn-am btn-default pull-right" style="margin-right:15px;">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </a>
             </li>
